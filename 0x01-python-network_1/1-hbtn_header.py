@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Python script that displays getheader value
+"""Python script that displays getheader value"""
 
 if __name__ == '__main__':
     import requests from urllib
