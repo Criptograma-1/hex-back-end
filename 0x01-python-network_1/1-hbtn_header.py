@@ -3,8 +3,8 @@
 A script that takes in a URL, sends a request to the URL and displays
 the value of the X-Request-Id variablefound in the header of the response.
 """
-import argv from sys
-import request from urllib
+from sys import argv
+from urllib import request
 
 
 def run():
