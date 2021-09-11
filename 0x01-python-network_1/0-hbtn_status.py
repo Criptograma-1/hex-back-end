@@ -1,20 +1,22 @@
 #!/usr/bin/python3
 """
-Write a Python script that fetches https://intranet.hbtn.io/status
+Contains a Python script that fetches https://intranet.hbtn.io/status.
 """
-import requests from urllib 
+import request from urllib
 
 
-def urlRequest():
-    """ Function that makes a request to a url """
-    with request.urlopen('https://intranet.hbtn.io/status') as response:
-        """ Function that makes a request to a url """
-        response = response.read()
-    """ Function that makes a request to a url """
-    print("Body response:")
-    print("- type: {}".format(type(response)))
-    print("- content: {}".format(response))
+def run():
+    """
+    Fetches https://intranet.hbtn.io/status.
+    """
+    url = 'https://intranet.hbtn.io/status'
+    with request.urlopen(url) as res:
+        r = res.read()
+        print('Body response:')
+        print('\t- type:', type(r))
+        print('\t- content:', r)
+        print('\t- utf8 content:', r.decode('utf-8'))
+
 
 if __name__ == "__main__":
-    """ Function that makes a request to a url """
-    urlRequest()
+    run()
