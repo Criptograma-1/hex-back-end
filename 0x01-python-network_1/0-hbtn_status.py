@@ -19,4 +19,7 @@ def run():
 
 
 if __name__ == "__main__":
+    """
+    Fetches https://intranet.hbtn.io/status.
+    """
     run()
