@@ -2,12 +2,11 @@
 """Python script that fetches https://intranet.hbtn.io/status"""
 
 
-"""Python script that fetches https://intranet.hbtn.io/status"""
 if __name__ == "__main__":
-    """Python script that fetches https://intranet.hbtn.io/status"""
+    """Import requests"""
     import requests from urllib
 
-    """Python script that fetches https://intranet.hbtn.io/status"""
+    """fetches https://intranet.hbtn.io/status"""
     with requests.urlopen('https://intranet.hbtn.io/status') as response:
         """Python script that fetches https://intranet.hbtn.io/status"""
         html = response.read()
