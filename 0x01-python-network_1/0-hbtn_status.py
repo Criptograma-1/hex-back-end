@@ -2,7 +2,7 @@
 """
 Contains a Python script that fetches https://intranet.hbtn.io/status.
 """
-import request from urllib
+import requests from urllib
 
 
 def run():
@@ -10,7 +10,7 @@ def run():
     Fetches https://intranet.hbtn.io/status.
     """
     url = 'https://intranet.hbtn.io/status'
-    with request.urlopen(url) as res:
+    with requests.urlopen(url) as res:
         r = res.read()
         print('Body response:')
         print('\t- type:', type(r))
