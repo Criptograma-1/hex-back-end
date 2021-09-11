@@ -4,9 +4,9 @@ X-Request-Id variable found in the header of the response"""
 
 
 if __name__ == "__main__":
-   import requests from urllib
-   import sys
+    import urllib.request
+    import sys
 
-   with requests(sys.argv[1]) as response:
-       head = response.headers.get('X-Request-Id')
-       print(head)
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        head = response.headers.get('X-Request-Id')
+        print(head)
