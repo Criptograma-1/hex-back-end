@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""urllib package"""
-
+"""
+Write a Python script that fetches https://intranet.hbtn.io/status
+"""
 import requests from urllib
 
 
 if __name__ == "__main__":
-    """script that fetches a URL"""
+    """"Function that makes a request to a url"""
     with requests.urlopen('https://intranet.hbtn.io/status') as response:
         response = response.read()
         print("Body response:")
