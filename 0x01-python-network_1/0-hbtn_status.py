@@ -3,7 +3,7 @@
 Write a Python script that fetches https://intranet.hbtn.io/status
 """
 
-import request from urllib
+import requests from urllib
 
 def urlRequest():
     """ Function that makes a request to a url. Its 6:15am """
