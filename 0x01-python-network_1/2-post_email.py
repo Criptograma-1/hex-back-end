@@ -11,9 +11,8 @@ from sys import argv
 def urlRequest(url, email):
     """ Function that sends a post request """
     values = {'email': email}
-
-    r = requests.post(url, data=values)
-    print(r.text)
+    r = requests.get(url, params=values)
+    print(r.text.decode('utf-8'))
 
 if __name__ == "__main__":
-    urlRequest(argv[1], argv[2])
+    urlRequest(sys.argv[1], sys.argv[2])
