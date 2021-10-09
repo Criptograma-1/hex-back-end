@@ -7,6 +7,7 @@ and displays the body of the response
 import requests
 from sys import argv
 
+
 def urlRequest(url):
     """Function that sends a request"""
     r = requests.get(url)
