@@ -2,8 +2,8 @@
 """Python script that displays getheader value"""
 
 if __name__ == '__main__':
-    import requests from urllib
+    import requests
     from sys import argv
 
-    with requests.urlopen(argv[1]) as header:
-        print(header.getheader('X-Request-Id'))
+    r = requests.get(argv[1])
+    print(r.headers.get('X-Request-Id'))
