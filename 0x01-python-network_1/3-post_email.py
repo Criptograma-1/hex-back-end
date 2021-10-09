@@ -8,6 +8,7 @@ and finally displays the body of the response
 import requests
 from sys import argv
 
+
 def urlRequest(url, email):
     """ Function that sends a post request """
     values = {'email': email}
