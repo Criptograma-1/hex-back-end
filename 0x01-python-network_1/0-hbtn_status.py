@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+
+from urllib import request
+
 """
 Write a Python script that fetches https://intranet.hbtn.io/status
 """
-from urllib import request
+
 
 
 def urlRequest():
