@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-script that use REST API for returns information 
+script that use REST API for returns information
 about employee TODO list progress
 """
+
 
 from sys import argv
 import requests as res
@@ -13,7 +14,8 @@ def getApi(u):
     user = int(u)
     done = 0
     todo = res.get('https://jsonplaceholder.typicode.com/todos', params={'userId': user})
-    empl = json.loads(res.get('https://jsonplaceholder.typicode.com/users', params={'id': user}).text)
+    em = res.get('https://jsonplaceholder.typicode.com/users', params={'id': user})
+    empl = json.loads(em.text)
     td = json.loads(todo.text)
 
     for i in range(len(td)):
