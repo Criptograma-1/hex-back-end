@@ -27,7 +27,7 @@ def getApi(u):
     undone = len(td)
     name = empl[0]['name']
 
-    print("Employee {} is done with tasks ({}/{}):".format(name, done, undone))
+    print("Employee {} is done with tasks({}/{}):".format(name, done, undone))
     for i in range(len(td)):
         print("\t{}".format(td[i]['title']))
 
