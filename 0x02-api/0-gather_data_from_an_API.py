@@ -20,7 +20,7 @@ def getApi(u):
                  params={'id': user})
     empl = json.loads(em.text)
     td = json.loads(todo.text)
-    
+
     for i in range(len(td)):
         if td[i]['completed'] is True:
             done = done+1
