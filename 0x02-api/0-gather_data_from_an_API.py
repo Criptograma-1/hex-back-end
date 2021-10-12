@@ -6,15 +6,18 @@ about employee TODO list progress
 
 
 from sys import argv
-import requests as res
 import json
+import requests as res
+
 
 def getApi(u):
     """A function that returns to do list"""
     user = int(u)
     done = 0
-    todo = res.get('https://jsonplaceholder.typicode.com/todos', params={'userId': user})
-    em = res.get('https://jsonplaceholder.typicode.com/users', params={'id': user})
+    todo = res.get('https://jsonplaceholder.typicode.com/todos', 
+                   params={'userId': user})
+    em = res.get('https://jsonplaceholder.typicode.com/users', 
+                 params={'id': user})
     empl = json.loads(em.text)
     td = json.loads(todo.text)
 
