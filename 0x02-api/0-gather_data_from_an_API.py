@@ -32,4 +32,4 @@ def getApi(u):
         print("\t{}".format(td[i]['title']))
 
 if __name__ == '__main__':
-       getApi(argv[1])    
+   getApi(argv[1])    
