@@ -16,7 +16,7 @@ def getApi(u):
                    params={'id': user}).json()
     
     for i in range(len(todo)):
-        print(todo[0]["userId"],empl[i]["name"],todo[i]["completed"],todo[i]["title"])
+        print(todo[i]["userId"],empl[0]["name"],todo[i]["completed"],todo[i]["title"])
 
 
 if __name__ == '__main__':
