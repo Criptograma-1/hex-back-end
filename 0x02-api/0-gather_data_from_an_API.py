@@ -5,7 +5,6 @@ about employee TODO list progress
 """
 
 
-import json
 import requests as res
 from sys import argv
 
@@ -15,22 +14,20 @@ def getApi(u):
     user = int(u)
     done = 0
     todo = res.get('https://jsonplaceholder.typicode.com/todos',
-                   params={'userId': user})
-    em = res.get('https://jsonplaceholder.typicode.com/users',
-                 params={'id': user})
-    empl = json.loads(em.text)
-    td = json.loads(todo.text)
+                   params={'userId': user}).json()
+    empl = res.get('https://jsonplaceholder.typicode.com/users',
+                 params={'id': user}).json()
 
-    for i in range(len(td)):
-        if td[i]['completed'] is True:
+    for i in range(len(todo)):
+        if todo[i]['completed'] is True:
             done = done+1
-    undone = len(td)
+    undone = len(todo)
     name = empl[0]['name']
     print("Employee {} is done with tasks({}/{}):".format(name, done, undone))
 
-    for i in range(len(td)):
-        if td[i]['completed'] is True:
-            print("\t {}".format(td[i]['title']))
+    for i in range(len(todo)):
+        if todo[i]['completed'] is True:
+            print("\t {}".format(todo[i]['title']))
 
 
 if __name__ == '__main__':
