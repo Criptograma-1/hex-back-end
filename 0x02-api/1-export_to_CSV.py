@@ -17,7 +17,6 @@ def getApi(u):
 
     data_to_file = open(u+".csv", 'w', newline='')
     csv_writer = csv.writer(data_to_file)
-    csv_writer.writerow(["id","name","completed","title"])
 
     for i in range(0, len(todo)):
         todoList = todo[i]
