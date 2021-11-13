@@ -22,7 +22,7 @@ def getApi(u):
         todoList = todo[i]
         id =str(todoList['userId'])
         name = empl[0]['name']
-        status =str(todoList['completed']
+        status =str(todoList['completed'])
         title = todoList['title']
         csv_writer.writerow([id,name,status,title])
     data_to_file.close()
