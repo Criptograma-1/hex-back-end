@@ -15,9 +15,18 @@ def getApi(u):
     empl = res.get('https://jsonplaceholder.typicode.com/users',
                    params={'id': user}).json()
 
-    with open(str(todo[i]["userId"])+".csv", 'w', newline='') as csvfile:
-        for i in range(len(todo)):
-            csv_writer = csv.writer(csvfile, delimiter=',')
-            csv_writer.writerows((str(todo[i]["userId"]) +  empl[0]["name"] + str(todo[i]["completed"]) + todo[i]["title"])
+    data_to_file = open(u+".csv", 'w', newline='')
+    csv_writer = csv.writer(data_to_file)
+    csv_writer.writerow(["id","name","completed","title"])
+
+    for i in range(0, len(todo)):
+        todoList = todo[i]
+        id = todoList["userId"]
+        name = empl[0]["name"]
+        status = todoList["completed"]
+        title = todoList["title"]
+        csv_writer.writerow([id,name,status,title])
+    data_to_file.close()
+
 if __name__ == '__main__':
     getApi(argv[1])
