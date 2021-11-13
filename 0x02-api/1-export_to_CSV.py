@@ -17,8 +17,7 @@ def getApi(u):
 
     with open(str(todo[i]["userId"])+".csv", 'w', newline='') as csvfile:
         for i in range(len(todo)):
-            csv_writer = csv.writer(csvfile, delimiter=' ')
-            csv_writer.writerows((str(todo[i]["userId"]) + "," +  empl[0]["name"] + "," + str(todo[i]["completed"]) + "," + todo[i]["title"])
-
+            csv_writer = csv.writer(csvfile, delimiter=',')
+            csv_writer.writerows((str(todo[i]["userId"]) +  empl[0]["name"] + str(todo[i]["completed"]) + todo[i]["title"])
 if __name__ == '__main__':
     getApi(argv[1])
