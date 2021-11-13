@@ -2,6 +2,7 @@
 """script to export data in the CSV format"""
 
 import csv
+import json
 import requests as res
 from sys import argv
 
@@ -9,7 +10,6 @@ from sys import argv
 def getApi(u):
     """A function that returns to do list"""
     user = int(u)
-    done = 0
     todo = res.get('https://jsonplaceholder.typicode.com/todos',
                    params={'userId': user}).json()
     empl = res.get('https://jsonplaceholder.typicode.com/users',
@@ -20,10 +20,10 @@ def getApi(u):
 
     for i in range(0, len(todo)):
         todoList = todo[i]
-        id = todoList["userId"]
-        name = empl[0]["name"]
-        status = todoList["completed"]
-        title = todoList["title"]
+        id =repr(str(todoList['userId']))
+        name = repr(empl[0]['name'])
+        status =repr(str(todoList['completed']))
+        title = repr(todoList['title'])
         csv_writer.writerow([id,name,status,title])
     data_to_file.close()
 
