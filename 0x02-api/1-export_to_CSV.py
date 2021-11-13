@@ -20,10 +20,10 @@ def getApi(u):
 
     for i in range(0, len(todo)):
         todoList = todo[i]
-        id =str(todoList['userId'])
-        name = empl[0]['username']
-        status =str(todoList['completed'])
-        title = todoList['title']
+        id ='"'+str(todoList['userId'])+'"'
+        name ='"'+ empl[0]['username']+'"'
+        status ='"'+str(todoList['completed'])+'"'
+        title = '"'+todoList['title']+'"'
         csv_writer.writerow([id,name,status,title])
     data_to_file.close()
 
