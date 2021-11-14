@@ -17,8 +17,8 @@ def getApi(u):
     filename = open(u+".json", 'w')
     for i in range(len(todo)):
         line = {
-            "task": todo[i]['title'], 
-            "completed": todo[i]['completed'], 
+            "task": todo[i]['title'],
+            "completed": todo[i]['completed'],
             "username": empl[0]['username']
         }
         todoList.append(line)
