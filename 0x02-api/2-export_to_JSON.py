@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script to export data in the CSV format"""
+"""script to export data in the JSON format"""
 
 import json
 import requests as res
@@ -7,7 +7,7 @@ from sys import argv
 
 
 def getApi(u):
-    """A function that returns to do list"""
+    """A function that returns to do list in JSON"""
     user = int(u)
     todo = res.get('https://jsonplaceholder.typicode.com/todos',
                    params={'userId': user}).json()
