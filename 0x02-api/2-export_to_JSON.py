@@ -13,14 +13,17 @@ def getApi(u):
                    params={'userId': user}).json()
     empl = res.get('https://jsonplaceholder.typicode.com/users',
                    params={'id': user}).json()
-    todoList =[];
+    todoList = []
     filename = open(u+".json", 'w')
     for i in range(len(todo)):
-        line = { "task": todo[i]['title'], "completed": todo[i]['completed'], "username": empl[0]['username']}
+        line = {
+            "task": todo[i]['title'], 
+            "completed": todo[i]['completed'], 
+            "username": empl[0]['username']
+        }
         todoList.append(line)
         todoDict = {u: todoList}
-    json.dump(todoDict,filename)
-        
+    json.dump(todoDict, filename)
 
 if __name__ == '__main__':
     getApi(argv[1])
