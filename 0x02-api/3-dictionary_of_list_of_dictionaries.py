@@ -12,13 +12,13 @@ def getApi():
     filename = open("todo_all_employees.json", 'w')
     for i in range(len(empl)):
         id = empl[i]['id']
-        todo = res.get('https://jsonplaceholder.typicode.com/todos', 
+        todo = res.get('https://jsonplaceholder.typicode.com/todos',
                        params={'userId': id}).json()
         todoList = []
         for j in range(len(todo)):
             line = {
-                "task": todo[j]['title'], 
-                "completed": todo[j]['completed'], 
+                "task": todo[j]['title'],
+                "completed": todo[j]['completed'],
                 "username": empl[i]['username']
             }
             todoList.append(line)
